@@ -9,10 +9,13 @@
       public :: lenstr
 
       logical (kind=log_kind), public :: &
-         restart    , &   ! if true, initialize using restart file instead of defaults
-         restart_ext, &   ! if true, read/write extended grid (with ghost cells)
-         restart_coszen, &   ! if true, read/write coszen
-         use_restart_time ! if true, use time written in core restart file
+         restart       , & ! if true, initialize using restart file instead of defaults
+         restart_ext   , & ! if true, read/write extended grid (with ghost cells)
+         restart_coszen, & ! if true, read/write coszen
+         use_restart_time  ! if true, use time written in core restart file
+
+      logical(kind=log_kind), public :: &
+           insert_sic      ! if true, update restart concentation from a file
 
       character (len=char_len), public :: &
          runtype           ! initial, continue, hybrid, branch
